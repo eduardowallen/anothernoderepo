@@ -19,6 +19,11 @@
     "typescript": "^5.4.5"
   },
   "dependencies": {
-    "express-validator": "^7.0.1"
+    "express-validator": "^7.0.1",
+    "mssql": "^10.0.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.9.7",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.0"
   }
 }
