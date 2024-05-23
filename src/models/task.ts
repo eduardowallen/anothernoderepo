@@ -8,3 +8,4 @@ export interface Task {
     completed?: boolean
 }
 
+export type CreateTaskDTO = Omit<Task, 'id'>

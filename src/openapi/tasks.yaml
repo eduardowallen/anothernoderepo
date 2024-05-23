@@ -1,0 +1,68 @@
+openapi: 3.0.0
+info:
+  title: Tasks API
+  description: API for managing tasks
+  version: 1.0.0
+paths:
+  /tasks:
+    post:
+      summary: Create a new task
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Task'
+      responses:
+        201:
+          description: Task created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Task'
+        400:
+          description: Bad request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        500:
+          description: Internal Server Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+components:
+  schemas:
+    Task:
+      type: object
+      properties:
+        id:
+          type: integer
+          description: Task id
+        title:
+          type: string
+          description: Task title
+        description:
+          type: string
+          description: Task description
+        dueDate:
+          type: string
+          format: date-time
+          description: Task due date
+        priority:
+          type: integer
+          description: Task priority
+        status:
+          type: string
+          description: Task status
+        completed:
+          type: boolean
+          description: Task completion status
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+        message:
+          type: string
